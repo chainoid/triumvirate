@@ -1,5 +1,5 @@
 # triumvirate
-Hyperlerder Fabric multihost solution by Chainoid
+Hyperlerder Fabric multihosts solution by Chainoid
 
 # Under initial loading...
 
