@@ -54,9 +54,9 @@ services:
             - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
     
     # Uncomment for use host's FS
-    #    volumes:
-    #        - /var/hyperledger/zk0/data:/data
-    #        - /var/hyperledger/zk0/datalog:/datalog    
+        volumes:
+            - /var/hyperledger/zk0/data:/data
+            - /var/hyperledger/zk0/datalog:/datalog    
         networks:
           behave:
              aliases:
@@ -72,9 +72,9 @@ services:
             - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
      
      # Uncomment for use host's FS        
-     #   volumes:
-     #       - /var/hyperledger/zk1/data:/data
-     #       - /var/hyperledger/zk1/datalog:/datalog    
+        volumes:
+           - /var/hyperledger/zk1/data:/data
+           - /var/hyperledger/zk1/datalog:/datalog    
         networks:
           behave:
              aliases:
@@ -90,9 +90,9 @@ services:
             - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
         
         # Uncomment for use host's FS
-        #volumes:
-        #    - /var/hyperledger/zk2/data:/data
-        #    - /var/hyperledger/zk2/datalog:/datalog    
+        volumes:
+            - /var/hyperledger/zk2/data:/data
+            - /var/hyperledger/zk2/datalog:/datalog    
         networks:
           behave:
              aliases:
@@ -108,8 +108,8 @@ services:
             - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper2:2181
             - KAFKA_MESSAGE_MAX_BYTES=${KAFKA_MESSAGE_MAX_BYTES}
           # Uncomment for use host's FS
-          #volumes:
-          #  - /var/hyperledger/kafka0:/tmp/kafka-logs
+        volumes:
+            - /var/hyperledger/kafka0:/tmp/kafka-logs
     
         depends_on:
             - zookeeper0
@@ -129,8 +129,8 @@ services:
             - KAFKA_BROKER_ID=1
             - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper2:2181
         # Uncomment for use host's FS
-        #volumes:
-        #   - /var/hyperledger/kafka1:/tmp/kafka-logs
+        volumes:
+           - /var/hyperledger/kafka1:/tmp/kafka-logs
         
         depends_on:
             - zookeeper0
@@ -150,8 +150,8 @@ services:
             - KAFKA_BROKER_ID=2
             - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper2:2181
         # Uncomment for use host's FS 
-        #volumes:
-        #    - /var/hyperledger/kafka2:/tmp/kafka-logs
+        volumes:
+            - /var/hyperledger/kafka2:/tmp/kafka-logs
         
         depends_on:
             - zookeeper0
@@ -171,8 +171,8 @@ services:
             - KAFKA_BROKER_ID=3
             - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper2:2181
         # Uncomment for use host's FS
-        #volumes:
-        #    - /var/hyperledger/kafka3:/tmp/kafka-logs    
+        volumes:
+            - /var/hyperledger/kafka3:/tmp/kafka-logs    
         depends_on:
             - zookeeper0
             - zookeeper1
@@ -203,7 +203,7 @@ services:
             - ../config/:/var/hyperledger/configs
          
          # Uncomment for use host's FS    
-         #   -  /var/hyperledger/orderer0:/var/hyperledger/production
+            -  /var/hyperledger/orderer0:/var/hyperledger/production
         depends_on:
             - kafka0
             - kafka1
@@ -239,7 +239,7 @@ services:
             - ../config/:/var/hyperledger/configs
 
         # Uncomment for use host's FS
-        #    - /var/hyperledger/orderer1:/var/hyperledger/production
+            - /var/hyperledger/orderer1:/var/hyperledger/production
         depends_on:
             - kafka0
             - kafka1
@@ -273,7 +273,7 @@ services:
             - ../config/:/var/hyperledger/configs
 
         # Uncomment for use host's FS    
-        #    - /var/hyperledger/orderer2:/var/hyperledger/production
+            - /var/hyperledger/orderer2:/var/hyperledger/production
         depends_on:
             - kafka0
             - kafka1
@@ -306,9 +306,8 @@ services:
             - ../crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls:/var/hyperledger/tls
             - ../crypto-config/peerOrganizations/org1.example.com/users:/var/hyperledger/users
             - ../config/:/var/hyperledger/configs
-
          # Uncomment for use host's FS    
-         #   - /var/hyperledger/peer01:/var/hyperledger/production
+            - /var/hyperledger/peer10:/var/hyperledger/production
 
         depends_on:
             - orderer0.example.com
@@ -344,7 +343,7 @@ services:
             - ../crypto-config/peerOrganizations/org1.example.com/users:/var/hyperledger/users
             - ../config/:/var/hyperledger/configs
          # Uncomment for use host's FS    
-         #   - /var/hyperledger/peer11:/var/hyperledger/production
+            - /var/hyperledger/peer11:/var/hyperledger/production
         depends_on:
             - orderer0.example.com
             - orderer1.example.com
@@ -378,7 +377,7 @@ services:
             - ../crypto-config/peerOrganizations/org1.example.com/users:/var/hyperledger/users
             - ../config/:/var/hyperledger/configs
          # Uncomment for use host's FS    
-         #   - /var/hyperledger/peer21:/var/hyperledger/production
+            - /var/hyperledger/peer12:/var/hyperledger/production
         depends_on:
             - orderer0.example.com
             - orderer1.example.com
@@ -411,9 +410,8 @@ services:
             - ../crypto-config/peerOrganizations/org1.example.com/peers/peer3.org1.example.com/tls:/var/hyperledger/tls
             - ../crypto-config/peerOrganizations/org1.example.com/users:/var/hyperledger/users
             - ../config/:/var/hyperledger/configs
-
         # Uncomment for use host's FS    
-        #   - /var/hyperledger/peer31:/var/hyperledger/production
+            - /var/hyperledger/peer13:/var/hyperledger/production
         depends_on:
             - orderer0.example.com
             - orderer1.example.com
@@ -448,7 +446,7 @@ services:
             - ../crypto-config/peerOrganizations/org2.example.com/users:/var/hyperledger/users
             - ../config/:/var/hyperledger/configs
          # Uncomment for use host's FS    
-         #   - /var/hyperledger/peer02:/var/hyperledger/production
+            - /var/hyperledger/peer20:/var/hyperledger/production
         depends_on:
             - orderer0.example.com
             - orderer1.example.com
@@ -480,9 +478,8 @@ services:
             - ../crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls:/var/hyperledger/tls
             - ../crypto-config/peerOrganizations/org2.example.com/users:/var/hyperledger/users
             - ../config/:/var/hyperledger/configs
-
         # Uncomment for use host's FS    
-        #   - /var/hyperledger/peer12:/var/hyperledger/production
+            - /var/hyperledger/peer21:/var/hyperledger/production
         depends_on:
             - orderer0.example.com
             - orderer1.example.com
