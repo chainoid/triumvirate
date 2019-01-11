@@ -26,7 +26,10 @@ sleep 1
 docker-compose -f ./network-config/docker-compose-cli.yml up -d
 #docker-compose -f ./network-config/docker-compose-couchdb.yml up -d
 
+# Install
+./install.sh
 
+# Init values
+./test.sh
 
 printf "\nTotal execution time : $(($(date +%s) - starttime)) secs ...\n\n"
-printf "\nNext step is install chaincode:  ./install.sh\n\n"
