@@ -2,7 +2,9 @@
 version: '2'
 
 networks:
-    behave:
+    posta-net:
+      external:
+          name: posta-net
 
 services:
 
@@ -21,7 +23,7 @@ services:
         volumes:
         - ../crypto-config/peerOrganizations/org1.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
         networks:
-          behave:
+         posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
 
@@ -40,7 +42,7 @@ services:
         volumes:
             - ../crypto-config/peerOrganizations/org2.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
 
@@ -58,7 +60,7 @@ services:
             - /var/hyperledger/zk0/data:/data
             - /var/hyperledger/zk0/datalog:/datalog    
         networks:
-          behave:
+         posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
 
@@ -76,7 +78,7 @@ services:
            - /var/hyperledger/zk1/data:/data
            - /var/hyperledger/zk1/datalog:/datalog    
         networks:
-          behave:
+         posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
 
@@ -94,7 +96,7 @@ services:
             - /var/hyperledger/zk2/data:/data
             - /var/hyperledger/zk2/datalog:/datalog    
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
 
@@ -116,7 +118,7 @@ services:
             - zookeeper1
             - zookeeper2
         networks:
-          behave:
+         posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
 
@@ -137,7 +139,7 @@ services:
             - zookeeper1
             - zookeeper2
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
 
@@ -158,7 +160,7 @@ services:
             - zookeeper1
             - zookeeper2
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
 
@@ -178,7 +180,7 @@ services:
             - zookeeper1
             - zookeeper2 
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
 
@@ -210,7 +212,7 @@ services:
             - kafka2
             - kafka3
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
         ports:
@@ -246,7 +248,7 @@ services:
             - kafka2
             - kafka3
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
         ports:
@@ -280,7 +282,7 @@ services:
             - kafka2
             - kafka3
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
         ports:
@@ -314,7 +316,7 @@ services:
             - orderer1.example.com
             - orderer2.example.com
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
         ports:
@@ -350,7 +352,7 @@ services:
             - orderer2.example.com
          #   - peer0.org1.example.com
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
         ports:
@@ -384,7 +386,7 @@ services:
             - orderer2.example.com
          #   - peer0.org1.example.com
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
         ports:
@@ -418,7 +420,7 @@ services:
             - orderer2.example.com
             - peer0.org1.example.com
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
         ports:
@@ -452,7 +454,7 @@ services:
             - orderer1.example.com
             - orderer2.example.com
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
         ports:
@@ -486,7 +488,7 @@ services:
             - orderer2.example.com
             - peer0.org2.example.com
         networks:
-          behave:
+          posta-net:
              aliases:
                - ${CORE_PEER_NETWORKID}
         ports:

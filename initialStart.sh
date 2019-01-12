@@ -27,9 +27,9 @@ docker-compose -f ./network-config/docker-compose-cli.yml up -d
 #docker-compose -f ./network-config/docker-compose-couchdb.yml up -d
 
 # Install
-./install.sh
+#./install.sh
 
 # Init values
-./test.sh
+#./test.sh
 
 printf "\nTotal execution time : $(($(date +%s) - starttime)) secs ...\n\n"

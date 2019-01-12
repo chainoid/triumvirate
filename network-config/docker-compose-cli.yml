@@ -1,7 +1,9 @@
 version: '2'
 
 networks:
-    behave:
+   posta-net:
+    external:
+        name: posta-net
 
 services:
   cli:
@@ -25,4 +27,4 @@ services:
         - $GOPATH/src/github.com/hyperledger/fabric/:/opt/gopath/src/github.com/hyperledger/fabric/
         - ../crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
     networks:
-        - behave
+        - posta-net
