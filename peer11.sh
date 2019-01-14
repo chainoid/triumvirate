@@ -13,7 +13,6 @@ docker run --rm -it \
  -e CORE_PEER_ENDORSER_ENABLED=true \
  -e CORE_PEER_ID=peer1.org1.example.com \
  -e CORE_PEER_PROFILE_ENABLED=true \
- -e CORE_PEER_COMMITTER_LEDGER_ORDERER=orderer.example.com:7050 \
  -e CORE_PEER_GOSSIP_ORGLEADER=false \
  -e CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org1.example.com:7051 \
  -e CORE_PEER_GOSSIP_IGNORESECURITY=true \

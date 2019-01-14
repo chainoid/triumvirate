@@ -8,12 +8,11 @@ docker run --rm -it \
  -e CORE_PEER_CHAINCODELISTENADDRESS=peer2.org1.example.com:7052 \
  -e CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock \
  -e CORE_LOGGING_LEVEL=INFO \
- -e CORE_PEER_NETWORKID=peer1.org1.example.com \
+ -e CORE_PEER_NETWORKID=peer2.org1.example.com \
  -e CORE_NEXT=true \
  -e CORE_PEER_ENDORSER_ENABLED=true \
  -e CORE_PEER_ID=peer1.org1.example.com \
  -e CORE_PEER_PROFILE_ENABLED=true \
- -e CORE_PEER_COMMITTER_LEDGER_ORDERER=orderer.example.com:7050 \
  -e CORE_PEER_GOSSIP_ORGLEADER=false \
  -e CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.org1.example.com:7051 \
  -e CORE_PEER_GOSSIP_IGNORESECURITY=true \
